@@ -26,6 +26,8 @@ export class MyServiceService {
         (el) => el.title !== currency
       );
     } else {
+
+
       // добавляет валюту по клику
       this.shownCurrencies = this.shownCurrencies.concat(pushedCurrency);
     }
