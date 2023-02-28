@@ -26,8 +26,6 @@ export class MyServiceService {
         (el) => el.title !== currency
       );
     } else {
-
-
       // добавляет валюту по клику
       this.shownCurrencies = this.shownCurrencies.concat(pushedCurrency);
     }
@@ -50,7 +48,7 @@ export class MyServiceService {
           };
 
         for (const CurrencyName of Object.keys(AllCurrencies)) {
-          const foundCurrencyObj = this.allCurrencies.find(
+          let foundCurrencyObj = this.allCurrencies.find(
             (currency) => currency.title === CurrencyName
           );
           if (foundCurrencyObj) {

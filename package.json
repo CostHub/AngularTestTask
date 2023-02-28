@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "pre-commit": "pretty-quick --staged && ng lint",
-    "pre-push": "npm run test --watch=false",
+    "pre-push": "ng test --source-map=false --browsers=ChromeHeadless --watch=false --code-coverage",
     "prepare": "husky install"
   },
   "private": true,
