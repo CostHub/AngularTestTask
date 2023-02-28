@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { IRequestAnswer } from '../models/IRequestAnswer.interface';
 import { ICurrencyValue } from '../models/ICurrencyValue.interface';
 import { mockResponse, mockResponse2 } from '../mockData/response.mock';
