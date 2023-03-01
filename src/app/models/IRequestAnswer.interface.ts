@@ -2,7 +2,7 @@ export interface IRequestAnswer {
   quotes: {
     RUBCNY: number;
     RUBEUR: number;
-    RUBGBR: number;
+    RUBGBP: number;
     RUBJPY: number;
     RUBTRY: number;
     RUBUSD: number;

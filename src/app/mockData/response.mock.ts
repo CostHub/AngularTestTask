@@ -3,42 +3,45 @@ import { ICurrencyValue } from '../models/ICurrencyValue.interface';
 export const mockResponse: ICurrencyValue[] = [
   {
     title: 'USD',
-    valueInRub: 75.11,
+    valueInRub: 75.01,
     changeValue: 0.0,
-    sign: true,
+    sign: false,
+    isShowed: true,
   },
   {
     title: 'EUR',
-    valueInRub: 75.21,
+    valueInRub: 79.41,
     changeValue: 0.0,
     sign: true,
+    isShowed: true,
   },
   {
-    title: 'GBR',
-    valueInRub: 75.51,
+    title: 'GBP',
+    valueInRub: 90.01,
     changeValue: 0.0,
     sign: true,
+    isShowed: true,
   },
-];
-
-export const mockResponse2: ICurrencyValue[] = [
   {
     title: 'CNY',
-    valueInRub: 75.51,
+    valueInRub: 10.8,
     changeValue: 0.0,
-    sign: false,
+    sign: true,
+    isShowed: false,
   },
 
   {
     title: 'JPY',
-    valueInRub: 75.51,
+    valueInRub: 0.55,
     changeValue: 0.0,
     sign: false,
+    isShowed: false,
   },
   {
     title: 'TRY',
-    valueInRub: 75.51,
+    valueInRub: 3.97,
     changeValue: 0.0,
     sign: false,
+    isShowed: false,
   },
 ];

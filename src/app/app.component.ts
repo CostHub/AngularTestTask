@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { filter, map, Subscription, timer } from 'rxjs';
-import { MyServiceService } from './services/my-service.service';
+import { map, Subscription, timer } from 'rxjs';
+import { RequestService } from './services/request.service';
 import { ICurrencyValue } from './models/ICurrencyValue.interface';
 import { DatePipe } from '@angular/common';
 
@@ -12,28 +12,27 @@ import { DatePipe } from '@angular/common';
 export class AppComponent implements OnInit, OnDestroy {
   title = 'AngularTestTask';
   timerSubscription: Subscription | undefined;
-  public shownCurrencies: ICurrencyValue[] = this.ReqService.shownCurrencies;
+  public Currencies: ICurrencyValue[] = this.reqService.Currencies;
 
-  now: number | undefined;
-
+  now: number = 0;
   today: number = Date.now();
 
-  constructor(private ReqService: MyServiceService, public datepipe: DatePipe) {
+  constructor(private reqService: RequestService, public datepipe: DatePipe) {
     setInterval(() => {
-      this.now = Date.now(); //обновление времени для часов
+      this.now = Date.now();
     }, 1000);
   }
 
   getRequest(): void {
-    this.ReqService.getQuotes2(
+    this.reqService.getQuotes(
       'RUB',
-      'USD%2C%20EUR%2C%20GBR%2C%20CNY%2C%20JPY%2C%20TRY'
+      'USD%2C%20EUR%2C%20GBP%2C%20CNY%2C%20JPY%2C%20TRY'
     );
+    this.Currencies = this.reqService.Currencies;
   }
 
   setNewCurrency(currency: string): void {
-    this.ReqService.setNewCurrency_(currency);
-    this.shownCurrencies = this.ReqService.shownCurrencies;
+    this.reqService.setNewCurrency(currency);
   }
 
   ngOnInit(): void {
@@ -45,7 +44,6 @@ export class AppComponent implements OnInit, OnDestroy {
         })
       )
       .subscribe();
-    console.log('on Init');
   }
 
   // Отписка при уничтожении компонента
@@ -53,7 +51,7 @@ export class AppComponent implements OnInit, OnDestroy {
     if (this.timerSubscription) {
       this.timerSubscription.unsubscribe();
     } else {
-      console.log('this.timerSubscription is undefined');
+      console.log('timerSubscription is undefined');
     }
   }
 }

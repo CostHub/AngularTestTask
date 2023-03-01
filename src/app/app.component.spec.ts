@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
-import { MyServiceService } from './services/my-service.service';
+import { RequestService } from './services/request.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
@@ -24,7 +24,7 @@ describe('AppComponent', () => {
         MatDividerModule,
         MatMenuModule,
       ],
-      providers: [DatePipe, MyServiceService],
+      providers: [DatePipe, RequestService],
     }).compileComponents();
   });
 

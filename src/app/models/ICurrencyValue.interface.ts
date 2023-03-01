@@ -3,4 +3,5 @@ export interface ICurrencyValue {
   valueInRub: number;
   changeValue: number;
   sign: boolean;
+  isShowed: boolean;
 }
